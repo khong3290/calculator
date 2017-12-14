@@ -16,45 +16,43 @@ class App extends Component {
 
     this.state = {
       inputValue: 0,
+      inputtwoValue: 0,
       resultValue: 0,
-
-      // this.handleClick = this.handleClick.bind(this);
-
     }
   }
+  handleClick = event => {
+      this.setState({inputValue: event.target.innerText})
+      
+  }
 
-    render() {
-      return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to Kevin's Calculator</h1>
-          </header>
-          <p className="App-intro">
-            <h2>
-              {this.state.inputValue}
-              
-            </h2>
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Welcome to Kevin's Calculator</h1>
+        </header>
+        <p>
+          {this.state.inputValue}
+        </p>
+          <Button raised color='primary' onClick={this.handleClick}> 7 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id= 'eight'> 8 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id= 'nine'> 9 </Button>
+        <br />
+          <Button raised color='primary' onClick={this.handleClick} id='four'> 4 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='five'> 5 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='six'> 6 </Button>
+        <br />
+          <Button raised color='primary' onClick={this.handleClick} id='one'> 1 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='two'> 2 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='three'> 3 </Button>
+        <br />
+          <Button raised color='primary' onClick={this.handleClick} id='plus'> + </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='cero'> 0 </Button>
+          <Button raised color='primary' onClick={this.handleClick} id='equals'> = </Button>
 
-          </p>
-          <Button raised color='primary' onClick={this.inputValue} id='inputValue == 7'> 7 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>8 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>9 </Button>
-          <br />
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>4 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>5 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>6 </Button>
-          <br />
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>1 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>2</Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>3 </Button>
-          <br />
-          <Button raised color='primary' handleClick={this.handleClick} type='action'>+ </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='input'>0 </Button>
-          <Button raised color='primary' handleClick={this.handleClick} type='action'>= </Button>
-
-        </div>
-      );
-    }
+      </div>
+    );
+  }
   
 }
 
